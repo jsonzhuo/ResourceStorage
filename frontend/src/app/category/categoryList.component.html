@@ -1,0 +1,42 @@
+<div class="container category-list">
+  <h2>资源分类列表</h2>
+  <a mat-raised-button color="primary" routerLink="/category/edit" [queryParams]="{id:''}">
+    <i class="material-icons md-18">add</i>
+    创建
+  </a>
+  <div class="example-container mat-elevation-z8">
+    <mat-table #table [dataSource]="CategoryList">
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="summary">
+        <mat-header-cell *matHeaderCellDef> Summary </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.summary}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> Operate</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <a mat-button color="primary" routerLink="/category/edit" [queryParams]="{id:element.id}">
+            <i class="material-icons md-18">edit</i>
+            编辑
+          </a>
+          <button mat-button>
+            <i class="material-icons md-18">delete</i>
+            删除
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+</div>

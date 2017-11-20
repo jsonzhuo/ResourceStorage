@@ -1,0 +1,29 @@
+<div class="container edit-category">
+  <h2>{{operateType}}分类</h2>
+  <mat-form-field hintLabel="Max 10 characters">
+    <input matInput #input maxlength="10" placeholder="Input name" [(ngModel)]="category.name">
+    <mat-hint align="end">{{category.name?.length || 0}}/10</mat-hint>
+  </mat-form-field>
+  <mat-form-field hintLabel="Max 50 characters">
+    <input matInput #input maxlength="50" placeholder="Input English name" [(ngModel)]="category.enName">
+    <mat-hint align="end">{{category.enName?.length || 0}}/50</mat-hint>
+  </mat-form-field>
+  <mat-form-field hintLabel="Max 50 characters">
+    <input matInput #input maxlength="50" placeholder="Input summary" [(ngModel)]="category.summary">
+    <mat-hint align="end">{{category.summary?.length || 0}}/50</mat-hint>
+  </mat-form-field>
+  <mat-form-field hintLabel="Max 200 characters">
+    <textarea matInput maxlength="200" placeholder="Input description" [(ngModel)]="category.description"></textarea>
+    <mat-hint align="end">{{category.description?.length || 0}}/200</mat-hint>
+  </mat-form-field>
+  <div style="text-align:center;">
+    <a mat-raised-button routerLink="/category/list">
+      <i class="material-icons md-18">arrow_back</i>
+      返回
+    </a>
+    <button mat-raised-button color="primary" (click)="saveCategory()">
+      <i class="material-icons md-18">save</i>
+      保存
+    </button>
+  </div>
+</div>

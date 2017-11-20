@@ -1,0 +1,52 @@
+<rs-carousel></rs-carousel>
+<div class="container home-container">
+  <h2 class="i-main-title">
+    <span class="text">
+      <span>ResourceCategory</span>
+      <span>/</span>资源分类</span>
+    <span class="sub-title">将资源分门别类，让你更快检索</span>
+  </h2>
+</div>
+<div class="container home-container">
+  <div class="row">
+    <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let category of CategoryList;let i=index;">
+      <a href="#" target="_blank">
+        <article class="i-art-wrap" [ngClass]="'art'+(i%3+1)">
+          <div class="i-ad-img">
+              <i *ngIf="i==0" class="material-icons md-60">book</i>
+              <i *ngIf="i==1" class="material-icons md-60">web</i>
+              <i *ngIf="i==2" class="material-icons md-60">queue_music</i>
+          </div>
+          <h3 [innerHTML]="category.name"></h3>
+          <p [innerHTML]="category.summary"></p>
+          <p [innerHTML]="category.description"></p>
+          <i class="light"></i>
+        </article>
+      </a>
+    </div>
+    <!--<div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let category of CategoryList">
+      <mat-card>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-header>
+          <mat-card-title>{{category.name}}</mat-card-title>
+          <mat-card-subtitle>{{category.summary}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p [innerHTML]="category.description">
+          </p>
+        </mat-card-content>
+        <mat-card-actions class="align-right">
+          <button mat-raised-button color="primary">
+            View
+            <i class="material-icons md-24">view_list</i>
+          </button>
+          <button mat-raised-button (click)="category.editable = true;">
+            Edit
+            <i class="material-icons md-24">edit</i>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>-->
+  </div>
+
+</div>

@@ -1,0 +1,18 @@
+.category-list{
+    position: relative;
+}
+.category-list h2{
+    line-height: 60px;
+    height: 60px;
+    text-align: left;
+    font-size: 18px;
+    color: #333;
+}
+
+.category-list>a{
+    position: absolute;
+    top: 20px;
+    right: 15px;
+
+}
+

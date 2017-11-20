@@ -1,0 +1,14 @@
+.edit-category{
+  max-width: 600px;
+}
+.edit-category h2{
+  line-height: 60px;
+  height: 60px;
+  text-align: left;
+  font-size: 18px;
+  color: #333;
+}
+
+.mat-form-field{
+  display: block;
+}
